@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artemis | IA por Paulo H. Correa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c5a059; 
+            --bg-color: #fdfdfd;
+            --text-color: #333;
+            --spacing-unit: 2rem;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* HERO SECTION */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--spacing-unit);
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 0.6rem;
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1.2s forwards 0.3s;
+        }
+
+        /* SECTION ARTEMIS INFO */
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem var(--spacing-unit);
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .c-highlight {
+            font-family: 'Inter', sans-serif;
+            background: #f4f4f4;
+            padding: 2rem;
+            border-left: 3px solid var(--accent-color);
+            margin: 3rem 0;
+            font-style: italic;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 4rem var(--spacing-unit);
+            background-color: var(--primary-color);
+            color: #888;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+        }
+
+        footer strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .launch-badge {
+            display: inline-block;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            margin-top: 2rem;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .content-section { padding: 4rem var(--spacing-unit); }
+        }
+        /* BOTÃO COM BRILHO INFINITO NA BORDA */
+.btn-glow {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color); /* Fundo sólido para cobrir o centro */
+    color: white;
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    overflow: hidden; /* Garante que o brilho não escape */
+    transition: var(--transition);
+    margin-top: 2rem;
+    z-index: 1;
+}
+
+/* O "Brilho" que gira */
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    width: 200%; /* Maior que o botão para cobrir as pontas ao girar */
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        var(--accent-color), 
+        transparent 30%
+    );
+    animation: rotateGlow 4s linear infinite;
+    z-index: -2;
+}
+
+/* A camada interna para manter a borda fina */
+.btn-glow::after {
+    content: '';
+    position: absolute;
+    inset: 1px; /* Espessura da borda (1px ou 2px) */
+    background: var(--primary-color);
+    border-radius: 3px;
+    z-index: -1;
+}
+
+.btn-glow span {
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+/* ANIMAÇÃO DE ROTAÇÃO */
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <p class="hero-subtitle">Artificial Intelligence</p>
+        <h1 class="hero-title">Artemis</h1>
+        <p style="max-width: 600px; margin: 0 auto;">A união entre a performance bruta da programação em C e a elegância da arquitetura de soluções modernas.</p>
+        <a href="https://iartium.com/paulohcorrea/form-pt.html" class="btn-glow">
+    <span>Lançamento em Breve | Entre em Contato</span>
+</a>
+    </header>
+
+    <main class="content-section">
+        <h2>O Núcleo da Inteligência</h2>
+        <p>
+            O Projeto Artemis não é apenas mais uma interface de chat. Ele é um motor de busca e processamento de linguagem construído inteiramente em <strong>Linguagem C</strong>. Esta escolha técnica garante uma gestão de memória impecável e uma velocidade de resposta que desafia os padrões atuais.
+        </p>
+
+        <div class="c-highlight">
+            "Desenvolvida para ser soberana e local, a Artemis utiliza algoritmos de busca otimizados (Grep/Regex) e um sistema de aprendizado contínuo para transformar arquivos de texto em uma biblioteca viva de conhecimento."
+        </div>
+
+        <p>
+            Como Arquiteto de Soluções, meu foco foi eliminar a latência e a dependência de nuvens externas, criando uma IA que reside no coração do sistema, pronta para correlacionar dados com precisão cirúrgica.
+        </p>
+    </main>
+
+    <footer>
+        <strong>"AI Solution Architect" — Arquiteto de Soluções</strong>
+        &copy; 2026 Todos os Direitos Reservados<br>
+        By PAULO HCORREA — CEO da Agência IARTIUM - ARTEMIS<br>
+        <span style="margin-top: 10px; display: block; opacity: 0.5;">IARTIUM.com | ARTEMIS</span>
+      <iframe src="https://visualizar-iartium.blogspot.com/p/artemis.html" width="1" height="1" title="Artemis"></iframe>
+    </footer>
+
+    <script>
+        // Efeito simples de revelação ao rolar
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 1s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
